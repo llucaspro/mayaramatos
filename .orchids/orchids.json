@@ -1,0 +1,7 @@
+{
+  "startupCommands": [
+    "python3 -m http.server 3000"
+  ],
+  "projectId": "bf5ebc4d-aac1-4a39-b607-5188cab6ad12",
+  "templateId": "any"
+}
