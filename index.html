@@ -12,7 +12,8 @@
   <meta name="robots" content="index, follow" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="mayara-matos-logo.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon.png" sizes="64x64" />
+  <link rel="shortcut icon" href="favicon.png" />
   <link rel="apple-touch-icon" href="mayara-matos-logo.png" />
 
   <!-- Open Graph / Facebook -->
@@ -138,10 +139,10 @@
       gap: 12px;
     }
     .nav-logo-img {
-      height: 44px;
+      height: 52px;
       width: auto;
       display: block;
-      filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(1.1);
+      filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(1.3);
       transition: filter 0.3s, transform 0.3s;
     }
     .nav-logo:hover .nav-logo-img { filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(1.3); transform: scale(1.04); }
@@ -1094,6 +1095,8 @@
       .footer-brand { grid-column: span 2; }
       .nav-links { display: none; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat-number { font-size: 2.6rem; }
+      .stat-item { padding: 32px 16px; }
     }
     @media (max-width: 600px) {
       .produtos-grid { grid-template-columns: 1fr; }
@@ -1102,11 +1105,28 @@
       .gallery-card:nth-child(2) { margin-top: 0; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-brand { grid-column: auto; }
-      #about, #gallery, #testimonials, #cta, #produtos { padding: 80px 5%; }
+      #about, #gallery, #testimonials, #cta, #produtos { padding: 64px 5%; }
+      #stats { padding: 48px 5%; }
+      #garantias, #faq { padding: 64px 5%; }
+      .section-header { margin-bottom: 40px; }
+      nav { padding: 14px 4%; }
+      nav.scrolled { padding: 10px 4%; }
+      .nav-logo-img { height: 40px; }
+      .nav-logo-text strong { font-size: 1.1rem; }
+      .nav-logo-text span { font-size: 0.45rem; letter-spacing: 3px; }
+      .about-features { grid-template-columns: 1fr; gap: 16px; }
+      .hero-cta-group { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
     }
     @media (max-width: 480px) {
       .gallery-grid { grid-template-columns: 1fr; }
       .garantias-grid { grid-template-columns: 1fr 1fr; }
+      .stat-number { font-size: 2.2rem; }
+      .stat-item { padding: 24px 12px; }
+      .stat-label { font-size: 0.58rem; letter-spacing: 2px; }
+      .nav-logo-img { height: 36px; }
+      .nav-logo-text strong { font-size: 1rem; }
+      .materiais-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
