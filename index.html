@@ -830,6 +830,189 @@
     .footer-social a:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
     .footer-social a svg { width: 14px; height: 14px; fill: currentColor; }
 
+    /* ===== MATERIAIS DESTAQUE ===== */
+    #materiais {
+      padding: 100px 5%;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #materiais::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .materiais-headline {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .materiais-headline .section-eyebrow { color: var(--gold); }
+    .materiais-headline h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      margin-top: 14px;
+    }
+    .materiais-headline h2 em { font-style: italic; color: var(--gold-light); }
+    .materiais-headline .section-divider { background: var(--gold); }
+    .materiais-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1000px;
+      margin: 0 auto 72px;
+      background: rgba(201,168,76,0.18);
+    }
+    .material-card {
+      background: var(--dark);
+      padding: 52px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.4s;
+    }
+    .material-card:hover { background: rgba(201,168,76,0.06); }
+    .material-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width 0.4s;
+    }
+    .material-card:hover::after { width: 60%; }
+    .material-symbol {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 16px;
+      line-height: 1;
+      transition: transform 0.4s;
+    }
+    .material-card:hover .material-symbol { transform: scale(1.12); }
+    .material-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .material-card p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+    .material-tag {
+      display: inline-block;
+      margin-top: 20px;
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold);
+      font-size: 0.58rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+    }
+    .materiais-cta-strip {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 44px 48px;
+      position: relative;
+    }
+    .materiais-cta-strip::before,
+    .materiais-cta-strip::after {
+      content: '✦';
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 1rem;
+      opacity: 0.5;
+    }
+    .materiais-cta-strip::before { left: 20px; }
+    .materiais-cta-strip::after { right: 20px; }
+    .materiais-cta-strip h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .materiais-cta-strip h3 em { font-style: italic; color: var(--gold-light); }
+    .materiais-cta-strip p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+    }
+
+    /* ===== FAQ ===== */
+    #faq {
+      padding: 120px 5%;
+      background: var(--cream);
+    }
+    .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(201,168,76,0.25);
+      overflow: hidden;
+    }
+    .faq-item:first-child { border-top: 1px solid rgba(201,168,76,0.25); }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      cursor: pointer;
+      text-align: left;
+    }
+    .faq-question span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+    .faq-icon {
+      width: 32px; height: 32px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+      font-size: 1.2rem;
+      font-weight: 300;
+      transition: transform 0.35s, background 0.3s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--gold); color: var(--dark); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.25,0.46,0.45,0.94), padding 0.3s;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer p {
+      font-size: 0.88rem;
+      line-height: 1.85;
+      color: #6b5a3a;
+      padding-bottom: 24px;
+    }
+
     /* ===== SCROLL REVEAL ===== */
     .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -915,9 +1098,10 @@
   </a>
   <ul class="nav-links">
     <li><a href="#about">Sobre</a></li>
+    <li><a href="#materiais">Materiais</a></li>
     <li><a href="#produtos">Coleções</a></li>
     <li><a href="#gallery">Galeria</a></li>
-    <li><a href="#testimonials">Depoimentos</a></li>
+    <li><a href="#faq">Dúvidas</a></li>
     <li><a href="#cta">Contato</a></li>
   </ul>
 </nav>
@@ -968,14 +1152,47 @@
   </div>
 </div>
 
+<!-- MATERIAIS DESTAQUE -->
+<section id="materiais">
+  <div class="materiais-headline reveal">
+    <span class="section-eyebrow">Nossa Especialidade</span>
+    <h2>Trabalhamos com os <em>Melhores Materiais</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="materiais-grid">
+    <div class="material-card reveal">
+      <span class="material-symbol">◈</span>
+      <h3>Prata 925</h3>
+      <p>Peças em prata de lei com acabamento artesanal impecável. Brilho e elegância que duram para sempre.</p>
+      <span class="material-tag">Alta Qualidade</span>
+    </div>
+    <div class="material-card reveal" style="transition-delay:0.12s">
+      <span class="material-symbol">✦</span>
+      <h3>Ouro 18k</h3>
+      <p>O ouro mais puro e valorizado, trabalhado à mão por quem realmente entende de joalheria artesanal.</p>
+      <span class="material-tag">Ouro Puro</span>
+    </div>
+    <div class="material-card reveal" style="transition-delay:0.24s">
+      <span class="material-symbol">◇</span>
+      <h3>Moedas Antigas</h3>
+      <p>Transformamos moedas históricas e antigas em joias únicas. Uma arte rara que preserva a memória e o valor.</p>
+      <span class="material-tag">Exclusivo</span>
+    </div>
+  </div>
+  <div class="materiais-cta-strip reveal">
+    <h3>Especialista em <em>Alianças Únicas e Personalizadas</em></h3>
+    <p>Do noivado ao casamento — criamos a aliança perfeita para o momento mais importante da sua vida, com o material que você escolher.</p>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
     <div class="about-image-wrapper reveal-left">
       <img src="fotos/foto4.jpg" alt="Anel artesanal Mayara Matos" loading="lazy"/>
       <div class="about-badge-float">
-        <span class="num">10+</span>
-        <span class="label">Anos de<br>Experiência</span>
+        <span class="num">✦</span>
+        <span class="label">Feita<br>à Mão</span>
       </div>
     </div>
     <div class="about-text reveal-right">
@@ -1237,6 +1454,81 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-header reveal">
+    <span class="section-eyebrow">Dúvidas Frequentes</span>
+    <h2 class="section-title">Perguntas <em>Comuns</em></h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Respondemos as dúvidas mais comuns. Não encontrou a sua? Fale conosco no WhatsApp.</p>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Vocês fazem peças sob encomenda?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Sim! Toda a nossa linha é feita sob encomenda. Você descreve a peça que deseja — ou traz uma referência — e criamos exatamente o que você imaginou, no material de sua preferência (ouro 18k, prata 925 ou moeda antiga).</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Trabalham com prata, ouro e moedas antigas?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Sim! Somos especialistas nos três materiais. Trabalhamos com Prata 925, Ouro 18k e também com moedas antigas — transformando peças históricas em joias exclusivas e únicas. Cada material tem seu charme e durabilidade garantida.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>O que é a Garantia Eterna?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Todas as nossas peças têm garantia vitalícia contra defeitos de fabricação. Se algo der errado com a joia, nós resolvemos sem custo adicional. É o nosso compromisso com a qualidade artesanal que oferecemos.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Qual é o prazo para receber minha peça?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>O prazo varia conforme a complexidade da peça e o material escolhido. Em média, as peças ficam prontas entre 7 e 21 dias úteis. Alianças personalizadas podem ter prazo um pouco maior. Tudo é combinado no momento do pedido.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Como funciona o processo de encomenda?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>É simples: entre em contato pelo WhatsApp, descreva a peça desejada (com foto ou referência, se tiver), receba o orçamento personalizado, aprove e aguarde sua joia ser criada com todo o cuidado artesanal.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Fazem alianças para casamento e noivado?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Sim! Alianças são nossa especialidade. Trabalhamos com modelos tradicionais, chanfrados e totalmente personalizados. Cada aliança é única — criada especialmente para eternizar o compromisso de vocês.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Vocês enviam para todo o Brasil?</span>
+        <div class="faq-icon">+</div>
+      </button>
+      <div class="faq-answer">
+        <p>Sim! Enviamos para todo o território nacional com embalagem especial para proteger sua joia durante o transporte. O frete é combinado no momento do pedido. Também atendemos presencialmente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section id="cta">
   <div class="section-header reveal">
@@ -1400,6 +1692,14 @@
     requestAnimationFrame(loop);
   }
   loop();
+
+  // FAQ ACCORDION
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
 
   // STAGGER REVEAL for product cards
   const staggerItems = document.querySelectorAll('.produto-card, .garantia-item, .gallery-card');
